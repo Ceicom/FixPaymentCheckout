@@ -1,0 +1,27 @@
+<config>
+    <modules>
+        <Ceicom_FixPaymentCheckout>
+            <version>0.0.0</version>
+        </Ceicom_FixPaymentCheckout>
+    </modules>
+    <global>
+        <models>
+            <Ceicom_FixPaymentCheckout>
+                <class>Ceicom_FixPaymentCheckout_Model</class>
+            </Ceicom_FixPaymentCheckout>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <filter_controller_action_predispatch>
+                        <type>singleton</type>
+                        <class>Ceicom_FixPaymentCheckout/observer</class>
+                        <method>dispatch</method>
+                    </filter_controller_action_predispatch>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </frontend>
+</config>
